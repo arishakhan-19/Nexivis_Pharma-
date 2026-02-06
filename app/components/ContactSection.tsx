@@ -48,13 +48,21 @@ export default function ContactSection() {
 
                     {/* Form Side */}
                     <div className="bg-gray-50 rounded-2xl p-8 border border-gray-100 shadow-sm">
-                        <form className="space-y-6">
+                        <form
+                            className="space-y-6"
+                            name="contact"
+                            method="POST"
+                            data-netlify="true"
+                        >
+                            <input type="hidden" name="form-name" value="contact" />
                             <div>
                                 <label className="block text-sm font-semibold text-gray-700 mb-2">Full Name</label>
                                 <input
                                     type="text"
+                                    name="name"
                                     className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[var(--primary-blue)] focus:border-transparent outline-none transition-all"
                                     placeholder="John Doe"
+                                    required
                                 />
                             </div>
 
@@ -62,17 +70,21 @@ export default function ContactSection() {
                                 <label className="block text-sm font-semibold text-gray-700 mb-2">Email Address</label>
                                 <input
                                     type="email"
+                                    name="email"
                                     className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[var(--primary-blue)] focus:border-transparent outline-none transition-all"
                                     placeholder="john@example.com"
+                                    required
                                 />
                             </div>
 
                             <div>
                                 <label className="block text-sm font-semibold text-gray-700 mb-2">Message</label>
                                 <textarea
+                                    name="message"
                                     rows={4}
                                     className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[var(--primary-blue)] focus:border-transparent outline-none transition-all resize-none"
                                     placeholder="How can we help you?"
+                                    required
                                 ></textarea>
                             </div>
 
