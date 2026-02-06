@@ -40,7 +40,7 @@ export default function ContactSection() {
                                 </div>
                                 <div>
                                     <h3 className="font-bold text-[var(--text-dark)]">Email</h3>
-                                    <p className="text-gray-600 mt-1">info@nexivis.com</p>
+                                    <p className="text-gray-600 mt-1">info@nexivispharma.com</p>
                                 </div>
                             </div>
                         </div>
