@@ -9,8 +9,8 @@ export default function Footer() {
         <div className="space-y-4">
           <div className="flex items-center gap-3">
             <Image
-              src="/images/brands/nexivis-logo-new.png?v=3"
-              alt="Nexivis Logo"
+              src="/images/brands/nexivis.jpeg?v=1"
+              alt="NEXIVIS"
               width={140}
               height={40}
               className="select-none"

@@ -39,8 +39,8 @@ export default function Navbar() {
             className="flex items-center shrink-0 hover:opacity-90 transition-opacity mx-auto md:mx-0"
           >
             <Image
-              src="/images/brands/nexivis-logo-new.png?v=3"
-              alt="Nexivis Pharma"
+              src="/images/brands/nexivis.jpeg?v=1"
+              alt="NEXIVIS"
               width={280}
               height={90}
               priority
@@ -92,8 +92,8 @@ export default function Navbar() {
         <div className="relative bg-white h-full w-[80%] max-w-sm shadow-2xl p-6 flex flex-col">
           <div className="flex items-center justify-between mb-8">
             <Image
-              src="/images/brands/nexivis-logo-new.png?v=3"
-              alt="Nexivis Pharma"
+              src="/images/brands/nexivis.jpeg?v=1"
+              alt="NEXIVIS"
               width={120}
               height={40}
               className="h-8 w-auto object-contain"
