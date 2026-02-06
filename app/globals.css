@@ -1,0 +1,186 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+
+  /* Pharmaceutical Brand Colors - Nexivis (Light Green Theme) */
+  --primary-blue: #10b981;
+  /* Emerald 500 - Main Green */
+  --secondary-blue: #34d399;
+  /* Emerald 400 - Secondary */
+  --accent-teal: #059669;
+  /* Emerald 600 - Darker accent */
+  --soft-gray: #ecfdf5;
+  /* Emerald 50 - Light background tint */
+  --text-dark: #064e3b;
+  /* Emerald 900 - Dark text */
+
+  /* Additional Interactive Colors */
+  --primary-blue-hover: #059669;
+  /* Hover state */
+  --accent-teal-hover: #047857;
+  --card-shadow: rgba(16, 185, 129, 0.08);
+  /* Green-tinted shadow */
+  --card-shadow-hover: rgba(16, 185, 129, 0.15);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+* {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
+
+body {
+  background: var(--soft-gray);
+  color: var(--text-dark);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+}
+
+/* Typography Enhancements */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--text-dark);
+}
+
+p {
+  line-height: 1.7;
+  color: #475569;
+}
+
+/* Link Styles */
+a {
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--primary-blue);
+}
+
+/* Button Base Styles */
+button,
+.btn {
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+button:hover,
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+button:active,
+.btn:active {
+  transform: translateY(0);
+}
+
+/* Card Styles */
+.card {
+  transition: all 0.3s ease-in-out;
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px 0 var(--card-shadow);
+}
+
+.card:hover {
+  box-shadow: 0 10px 25px -5px var(--card-shadow-hover);
+  transform: translateY(-2px);
+}
+
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Animation Utilities */
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.delay-75 {
+  animation-delay: 75ms;
+}
+
+.delay-300 {
+  animation-delay: 300ms;
+}
+
+/* Pharmaceutical Pattern Background */
+.pharma-pattern {
+  background-image:
+    radial-gradient(circle at 2px 2px, rgba(30, 64, 175, 0.1) 1px, transparent 0);
+  background-size: 40px 40px;
+}
+
+/* Shimmer Animation for Navbar */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%) skewX(-12deg);
+  }
+
+  100% {
+    transform: translateX(200%) skewX(-12deg);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.delay-150 {
+  animation-delay: 150ms;
+}
