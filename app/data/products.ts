@@ -5,7 +5,7 @@ export const products = [
         category: "Tablets",
         description: "Aceclofenac, Paracetamol & Serratiopeptidase Tablets. Effective for pain relief and inflammation.",
         longDescription: "Nexsera-SP is a powerful combination formulated to provide rapid relief from pain and inflammation. Aceclofenac works to reduce pain and swelling, Paracetamol acts as an analgesic and antipyretic, while Serratiopeptidase aids in the breakdown of abnormal proteins at the site of inflammation, promoting faster healing.",
-        images: ["/images/products/nexsera-sp.jpg"],
+        images: ["/images/products/nexsera-sp.png"],
     },
     {
         id: "nexilive-m",
@@ -13,7 +13,7 @@ export const products = [
         category: "Tablets",
         description: "Montelukast Sodium & Levocetirizine Hydrochloride Tablets. Advanced relief for allergies and respiratory health.",
         longDescription: "Nexilive-M combines Montelukast and Levocetirizine to effectively manage allergic rhinitis and asthma symptoms. It alleviates sneezing, runny nose, and allergic skin conditions while helping to keep airways open for easier breathing.",
-        images: ["/images/products/nexilive-m.jpg"],
+        images: ["/images/products/nexilive-m.png"],
     },
     {
         id: "azinex-250",
