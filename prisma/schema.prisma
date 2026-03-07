@@ -1,0 +1,51 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Category {
+  id          String   @id @default(uuid())
+  slug        String   @unique
+  name        String
+  description String?
+  sortOrder   Int?
+  isActive    Boolean  @default(true)
+
+  products    Product[]
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Product {
+  id                String   @id @default(uuid())
+  slug              String   @unique
+  name              String
+  shortDescription  String
+  longDescription   String?
+  composition       String?
+  form              String?
+  packSize          String?
+  indications       String?
+  dosage            String?
+  contraindications String?
+  sideEffects       String?
+  interactions      String?
+  warnings          String?
+  storage           String?
+  shelfLife         String?
+
+  images            String[]
+  leafletUrl        String?
+  certificateUrl    String?
+
+  status            String   @default("draft")
+
+  categoryId        String
+  category          Category @relation(fields: [categoryId], references: [id])
+
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+}

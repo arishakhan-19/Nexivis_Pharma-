@@ -67,8 +67,25 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Right Content - Empty to let video show */}
-        <div className="hidden md:block">
+        {/* Right Content - Certifications aligned to right */}
+        <div className="hidden md:flex flex-col justify-center items-end h-full gap-6">
+          <div className="flex gap-4 animate-fade-in-left delay-500">
+            {["certification1.jpg", "certification2.jpg", "certification3.jpg"].map((cert, index) => (
+              <div key={index} className="w-20 h-20 md:w-28 md:h-28 bg-white rounded-full p-2 shadow-2xl border-4 border-emerald-50/50 flex items-center justify-center transition-transform hover:scale-110 group cursor-pointer backdrop-blur-sm">
+                <img
+                  src={`/images/brands/${cert}`}
+                  alt="Certified Quality"
+                  className="w-full h-full object-contain rounded-full group-hover:rotate-6 transition-transform duration-500"
+                />
+              </div>
+            ))}
+          </div>
+          <div className="flex items-center gap-4 bg-white/90 backdrop-blur-md px-6 py-2 rounded-full shadow-lg">
+            <div className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></div>
+            <p className="text-sm font-bold text-[var(--primary-blue)] uppercase tracking-wider">
+              Global Manufacturing Standards
+            </p>
+          </div>
         </div>
 
       </div>

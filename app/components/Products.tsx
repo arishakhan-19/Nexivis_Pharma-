@@ -17,47 +17,66 @@ export default function Products() {
                     </p>
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {products.map((product) => (
-                        <div
-                            key={product.id}
-                            className="group bg-white rounded-2xl border border-gray-100 p-4 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:border-[var(--accent-teal)]"
-                        >
-                            {/* Image Container - Showing only the first image */}
-                            <div className="relative h-64 w-full bg-white rounded-xl overflow-hidden mb-6">
-                                <Image
-                                    src={product.images[0]}
-                                    alt={product.name}
-                                    fill
-                                    className="object-contain hover:scale-105 transition-transform duration-500"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-[var(--primary-blue)]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-                            </div>
+                <div className="space-y-16">
+                    {["ANTI-INFECTIVE & ANTI-ALLERGIC", "ANALGESIC & ANTIPYRETICS", "GASTROPROTECTIVE"].map((category) => {
+                        const categoryProducts = products.filter(p => p.category === category);
 
-                            {/* Content */}
-                            <div className="px-2 pb-4">
-                                <span className="inline-block px-3 py-1 bg-emerald-50 text-[var(--primary-blue)] text-xs font-semibold rounded-full mb-3">
-                                    {product.category}
-                                </span>
-                                <h3 className="text-2xl font-bold text-[var(--text-dark)] mb-2 group-hover:text-[var(--primary-blue)] transition-colors">
-                                    {product.name}
-                                </h3>
-                                <p className="text-gray-500 mb-6 text-sm leading-relaxed">
-                                    {product.description}
-                                </p>
+                        if (categoryProducts.length === 0) return null;
 
-                                <Link
-                                    href={`/products/${product.id}`}
-                                    className="inline-flex items-center text-[var(--accent-teal)] font-semibold text-sm hover:text-[var(--primary-blue)] transition-colors"
-                                >
-                                    View Details
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform">
-                                        <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                                    </svg>
-                                </Link>
+                        return (
+                            <div key={category} className="space-y-8">
+                                {/* Category Header */}
+                                <div className="relative overflow-hidden rounded-xl bg-gradient-to-r from-[var(--primary-blue)] to-blue-600 shadow-md">
+                                    <div className="absolute inset-0 bg-white/10 opacity-50 pattern-grid"></div>
+                                    <h3 className="relative z-10 py-3 text-center text-xl md:text-2xl font-bold text-white uppercase tracking-wider backdrop-blur-sm">
+                                        {category}
+                                    </h3>
+                                </div>
+
+                                {/* Product Grid */}
+                                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                                    {categoryProducts.map((product) => (
+                                        <div
+                                            key={product.id}
+                                            className="group bg-white rounded-2xl border border-gray-100 p-4 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:border-[var(--accent-teal)] flex flex-col"
+                                        >
+                                            {/* Image Container - Box Focused */}
+                                            <Link href={`/products/${product.id}`} className="block relative h-64 w-full bg-white rounded-xl overflow-hidden mb-6 cursor-pointer">
+                                                <Image
+                                                    src={product.images[0]}
+                                                    alt={product.name}
+                                                    fill
+                                                    className="object-contain p-4 hover:scale-110 transition-transform duration-500"
+                                                />
+                                            </Link>
+
+                                            {/* Content */}
+                                            <div className="px-2 pb-4 text-center mt-auto">
+                                                <Link href={`/products/${product.id}`}>
+                                                    <h3 className="text-2xl font-bold text-[var(--accent-teal)] mb-2 group-hover:text-[var(--primary-blue)] transition-colors cursor-pointer">
+                                                        {product.name}
+                                                    </h3>
+                                                </Link>
+                                                <div className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">
+                                                    Tablets / Capsules
+                                                </div>
+                                                <p className="text-gray-500 mb-6 text-sm leading-relaxed line-clamp-2">
+                                                    {product.description}
+                                                </p>
+
+                                                <Link
+                                                    href={`/products/${product.id}`}
+                                                    className="inline-flex items-center text-white bg-[var(--primary-blue)] px-6 py-2 rounded-full font-semibold text-sm hover:bg-[var(--accent-teal)] transition-colors shadow-md"
+                                                >
+                                                    View Details
+                                                </Link>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
-                        </div>
-                    ))}
+                        );
+                    })}
                 </div>
 
             </div>
