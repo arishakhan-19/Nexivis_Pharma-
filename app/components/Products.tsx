@@ -24,7 +24,7 @@ export default function Products() {
                         if (categoryProducts.length === 0) return null;
 
                         return (
-                            <div key={category} className="space-y-8">
+                            <div key={category} id={category.split(' ')[0].toLowerCase()} className="space-y-8 scroll-mt-32">
                                 {/* Category Header */}
                                 <div className="relative overflow-hidden rounded-xl bg-gradient-to-r from-[var(--primary-blue)] to-blue-600 shadow-md">
                                     <div className="absolute inset-0 bg-white/10 opacity-50 pattern-grid"></div>
