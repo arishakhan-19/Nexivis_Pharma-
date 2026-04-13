@@ -60,12 +60,11 @@ export default function Navbar() {
             href="/"
             className="flex items-center shrink-0 hover:opacity-90 transition-opacity mx-auto md:mx-0"
           >
-            <Image
+            <img
               src="/images/brands/nexivis_logo.png"
               alt="NEXIVIS"
               width={220}
               height={70}
-              priority
               className="h-8 md:h-10 w-auto object-contain"
             />
           </Link>
@@ -167,7 +166,7 @@ export default function Navbar() {
         {/* Sidebar */}
         <div className="relative bg-white h-full w-[80%] max-w-sm shadow-2xl p-6 flex flex-col">
           <div className="flex items-center justify-between mb-8">
-            <Image
+            <img
               src="/images/brands/nexivis_logo.png"
               alt="NEXIVIS"
               width={120}

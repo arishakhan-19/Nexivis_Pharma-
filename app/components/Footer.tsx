@@ -8,7 +8,7 @@ export default function Footer() {
         {/* Brand & Disclaimer */}
         <div className="space-y-4">
           <div className="flex items-center gap-3">
-            <Image
+            <img
               src="/images/brands/nexivis_logo.png"
               alt="NEXIVIS"
               width={140}
