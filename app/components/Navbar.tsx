@@ -16,7 +16,6 @@ const links = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About Nexivis" },
   { href: "/products", label: "Products" },
-  { href: "/catalogue", label: "Order Catalogue" },
   { href: "/vision", label: "Vision & Mission" },
   { href: "/contact", label: "Contact" },
 ];
@@ -45,7 +44,7 @@ export default function Navbar() {
         <nav className="max-w-7xl mx-auto px-4 md:px-6 py-4 flex items-center justify-between">
 
           {/* Hamburger Menu (Mobile & Tablet) */}
-          <button
+          <button suppressHydrationWarning
             onClick={() => setIsMenuOpen(true)}
             className="md:hidden p-2 text-[var(--primary-blue)] hover:bg-emerald-50 rounded-full transition-colors focus:outline-none"
             aria-label="Open Menu"
@@ -105,7 +104,7 @@ export default function Navbar() {
                     >
                         {productCategories.map((cat, idx) => (
                            cat.isPopup ? (
-                             <button 
+                             <button suppressHydrationWarning 
                                key={idx} 
                                onClick={() => { setShowPopup(true); setIsDropdownOpen(false); }} 
                                className="w-full text-left px-6 py-3 text-sm font-semibold text-gray-700 hover:bg-emerald-50 hover:text-[var(--primary-blue)] transition-colors border-b border-gray-50 last:border-0"
@@ -173,7 +172,7 @@ export default function Navbar() {
               height={40}
               className="h-8 w-auto object-contain"
             />
-            <button
+            <button suppressHydrationWarning
               onClick={() => setIsMenuOpen(false)}
               className="p-2 text-gray-500 hover:text-[var(--primary-blue)] hover:bg-emerald-50 rounded-full transition-colors"
             >
@@ -196,7 +195,7 @@ export default function Navbar() {
                       >
                         {link.label}
                       </Link>
-                      <button className="p-1 text-gray-400">
+                      <button suppressHydrationWarning className="p-1 text-gray-400">
                         <svg className={`w-5 h-5 transition-transform duration-300 ${mobileDropdownOpen ? "rotate-180 text-[var(--primary-blue)]" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                         </svg>
@@ -207,7 +206,7 @@ export default function Navbar() {
                         {productCategories.map((cat, idx) => (
                           <li key={idx}>
                             {cat.isPopup ? (
-                              <button 
+                              <button suppressHydrationWarning 
                                 onClick={() => { setShowPopup(true); setIsMenuOpen(false); }} 
                                 className="block w-full text-left px-4 py-3 text-sm font-semibold text-gray-600 hover:text-[var(--primary-blue)] hover:bg-emerald-50 rounded-lg transition-colors border-b border-gray-50 last:border-0"
                               >
@@ -257,7 +256,7 @@ export default function Navbar() {
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
           <div className="absolute inset-0 bg-black/40 backdrop-blur-sm transition-opacity duration-300" onClick={() => setShowPopup(false)}></div>
           <div className="relative bg-white rounded-2xl p-8 max-w-sm w-full shadow-2xl transition-all duration-300 transform scale-100 opacity-100">
-            <button
+            <button suppressHydrationWarning
               onClick={() => setShowPopup(false)}
               className="absolute top-4 right-4 text-gray-400 hover:text-red-500 hover:bg-red-50 p-1.5 rounded-full transition-colors"
             >
@@ -272,7 +271,7 @@ export default function Navbar() {
                 </svg>
               </div>
               <h3 className="text-2xl font-bold text-[var(--primary-blue)] mb-6">Launching Soon !!</h3>
-              <button 
+              <button suppressHydrationWarning 
                 onClick={() => setShowPopup(false)} 
                 className="w-full py-3 bg-gradient-to-r from-[var(--primary-blue)] to-blue-600 hover:from-blue-600 hover:to-[var(--primary-blue)] text-white font-semibold rounded-xl transition-all duration-300 shadow-md hover:shadow-lg focus:outline-none"
               >

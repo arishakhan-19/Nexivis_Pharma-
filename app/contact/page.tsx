@@ -120,7 +120,7 @@ export default function ContactPage() {
                                     </svg>
                                 </div>
                                 <h3 className="text-2xl font-bold text-gray-800">Thank you for reaching out!</h3>
-                                <button
+                                <button suppressHydrationWarning
                                     onClick={() => setStatus("idle")}
                                     className="mt-6 px-8 py-3 bg-emerald-600 text-white font-bold rounded-lg hover:bg-emerald-700 transition shadow-md"
                                 >
@@ -174,7 +174,7 @@ export default function ContactPage() {
                                     {errors.message && <p className="text-red-500 text-xs font-medium mt-1.5">{errors.message}</p>}
                                 </div>
 
-                                <button
+                                <button suppressHydrationWarning
                                     type="submit"
                                     disabled={status === "loading"}
                                     className="w-full bg-emerald-600 text-white font-bold py-4 rounded-lg hover:bg-emerald-700 transition shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 duration-200 disabled:opacity-75 disabled:hover:translate-y-0 disabled:cursor-not-allowed flex items-center justify-center gap-2"

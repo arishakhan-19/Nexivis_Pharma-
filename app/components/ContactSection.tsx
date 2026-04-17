@@ -110,7 +110,7 @@ export default function ContactSection() {
                                 <p className="text-gray-600">
                                     Thank you for reaching out. We will get back to you shortly.
                                 </p>
-                                <button
+                                <button suppressHydrationWarning
                                     onClick={() => setStatus("idle")}
                                     className="mt-4 px-6 py-2 bg-emerald-600 text-white font-bold rounded-lg hover:bg-emerald-700 transition"
                                 >
@@ -171,7 +171,7 @@ export default function ContactSection() {
                                     ></textarea>
                                 </div>
 
-                                <button
+                                <button suppressHydrationWarning
                                     type="submit"
                                     disabled={status === "loading"}
                                     className="w-full bg-emerald-600 text-white font-bold py-4 rounded-lg hover:bg-emerald-700 transition-colors shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 duration-200 disabled:opacity-70 disabled:hover:translate-y-0 disabled:cursor-not-allowed"

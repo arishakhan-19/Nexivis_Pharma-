@@ -16,7 +16,7 @@ export default function VisionContent() {
                         { id: "mission", label: "Mission Statement Breakdown" },
                         { id: "key-values", label: "Key Values & Commitment" }
                     ].map((tab) => (
-                        <button
+                        <button suppressHydrationWarning
                             key={tab.id}
                             onClick={() => setActiveTab(tab.id)}
                             className={`px-6 py-3 text-lg font-medium transition-all relative ${activeTab === tab.id
@@ -84,7 +84,7 @@ export default function VisionContent() {
 
                         {/* Navigation Arrow */}
                         <div className="flex justify-center mt-12">
-                            <button onClick={() => setActiveTab("mission")} className="group flex items-center gap-2 text-[var(--primary-blue)] font-semibold hover:gap-4 transition-all">
+                            <button suppressHydrationWarning onClick={() => setActiveTab("mission")} className="group flex items-center gap-2 text-[var(--primary-blue)] font-semibold hover:gap-4 transition-all">
                                 Explore Our Mission
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
@@ -164,11 +164,11 @@ export default function VisionContent() {
                         </div>
 
                         <div className="mt-12 flex justify-center gap-4">
-                            <button onClick={() => setActiveTab("philosophy")} className="text-gray-500 hover:text-[var(--primary-blue)] flex items-center gap-2 text-lg font-medium transition-colors">
+                            <button suppressHydrationWarning onClick={() => setActiveTab("philosophy")} className="text-gray-500 hover:text-[var(--primary-blue)] flex items-center gap-2 text-lg font-medium transition-colors">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 rotate-180"><path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" /></svg>
                                 Back
                             </button>
-                            <button onClick={() => setActiveTab("key-values")} className="text-[var(--primary-blue)] font-semibold hover:gap-3 transition-all flex items-center gap-2 text-lg">
+                            <button suppressHydrationWarning onClick={() => setActiveTab("key-values")} className="text-[var(--primary-blue)] font-semibold hover:gap-3 transition-all flex items-center gap-2 text-lg">
                                 Key Values
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5"><path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" /></svg>
                             </button>
@@ -246,7 +246,7 @@ export default function VisionContent() {
                         </div>
 
                         <div className="mt-12 flex justify-center">
-                            <button onClick={() => setActiveTab("mission")} className="text-gray-500 hover:text-[var(--primary-blue)] flex items-center gap-2 text-lg font-medium transition-colors">
+                            <button suppressHydrationWarning onClick={() => setActiveTab("mission")} className="text-gray-500 hover:text-[var(--primary-blue)] flex items-center gap-2 text-lg font-medium transition-colors">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 rotate-180"><path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" /></svg>
                                 Back to Mission
                             </button>
