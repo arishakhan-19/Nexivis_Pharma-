@@ -9,7 +9,7 @@ export default function ContactPage() {
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        
+
         const formData = new FormData(e.currentTarget);
         const name = formData.get("name") as string;
         const email = formData.get("email") as string;
@@ -28,7 +28,7 @@ export default function ContactPage() {
 
         setErrors({});
         setStatus("loading");
-        
+
         try {
             const { error: supabaseError } = await supabase.from("enquiries").insert([
                 {
@@ -65,7 +65,7 @@ export default function ContactPage() {
 
             <div className="max-w-6xl mx-auto px-6 mt-12">
                 <div className="grid lg:grid-cols-2 gap-8 items-stretch">
-                    
+
                     {/* LEFT SIDE - emerald gradient card */}
                     <div className="bg-gradient-to-br from-emerald-600 to-emerald-800 rounded-2xl p-10 text-white shadow-xl flex flex-col justify-between">
                         <div>
@@ -83,7 +83,7 @@ export default function ContactPage() {
                                     </div>
                                     <span className="text-lg">info@nexivispharma.com</span>
                                 </div>
-                                
+
                                 <div className="flex items-center gap-4">
                                     <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center shrink-0">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-white">
@@ -104,7 +104,7 @@ export default function ContactPage() {
                                 </div>
                             </div>
                         </div>
-                        
+
                         <p className="mt-16 !text-white text-sm">
                             We typically respond within 24 hours
                         </p>
@@ -134,15 +134,14 @@ export default function ContactPage() {
                                         Something went wrong. Please try again.
                                     </div>
                                 )}
-                                
+
                                 <div>
                                     <label className="block text-sm font-semibold text-gray-700 mb-2">Full Name</label>
                                     <input
                                         type="text"
                                         name="name"
-                                        className={`w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-emerald-500 focus:border-transparent outline-none transition-all ${
-                                            errors.name ? 'border-red-500 bg-red-50' : 'border-gray-300'
-                                        }`}
+                                        className={`w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-emerald-500 focus:border-transparent outline-none transition-all ${errors.name ? 'border-red-500 bg-red-50' : 'border-gray-300'
+                                            }`}
                                         disabled={status === "loading"}
                                     />
                                     {errors.name && <p className="text-red-500 text-xs font-medium mt-1.5">{errors.name}</p>}
@@ -153,9 +152,8 @@ export default function ContactPage() {
                                     <input
                                         type="email"
                                         name="email"
-                                        className={`w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-emerald-500 focus:border-transparent outline-none transition-all ${
-                                            errors.email ? 'border-red-500 bg-red-50' : 'border-gray-300'
-                                        }`}
+                                        className={`w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-emerald-500 focus:border-transparent outline-none transition-all ${errors.email ? 'border-red-500 bg-red-50' : 'border-gray-300'
+                                            }`}
                                         disabled={status === "loading"}
                                     />
                                     {errors.email && <p className="text-red-500 text-xs font-medium mt-1.5">{errors.email}</p>}
@@ -166,9 +164,8 @@ export default function ContactPage() {
                                     <textarea
                                         name="message"
                                         rows={4}
-                                        className={`w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-emerald-500 focus:border-transparent outline-none transition-all resize-none ${
-                                            errors.message ? 'border-red-500 bg-red-50' : 'border-gray-300'
-                                        }`}
+                                        className={`w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-emerald-500 focus:border-transparent outline-none transition-all resize-none ${errors.message ? 'border-red-500 bg-red-50' : 'border-gray-300'
+                                            }`}
                                         disabled={status === "loading"}
                                     ></textarea>
                                     {errors.message && <p className="text-red-500 text-xs font-medium mt-1.5">{errors.message}</p>}

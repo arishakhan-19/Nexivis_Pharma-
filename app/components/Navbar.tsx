@@ -75,11 +75,11 @@ export default function Navbar() {
 
               if (link.label === "Products") {
                 return (
-                  <li 
-                    key={link.href} 
+                  <li
+                    key={link.href}
                     ref={dropdownRef}
-                    className="relative group" 
-                    onMouseEnter={() => setIsDropdownOpen(true)} 
+                    className="relative group"
+                    onMouseEnter={() => setIsDropdownOpen(true)}
                     onMouseLeave={() => setIsDropdownOpen(false)}
                   >
                     <div className="flex items-center gap-1 cursor-pointer">
@@ -95,33 +95,33 @@ export default function Navbar() {
                         {link.label}
                       </Link>
                     </div>
-                    
+
                     {/* Desktop Dropdown */}
-                    <div 
+                    <div
                       className={`absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[340px] bg-white rounded-xl shadow-[0_10px_40px_rgba(0,0,0,0.08)] border border-gray-100 py-3 transition-all duration-200 transform origin-top 
                         ${isDropdownOpen ? "opacity-100 scale-100 visible translate-y-0" : "opacity-0 scale-95 invisible -translate-y-2"}
                       `}
                     >
-                        {productCategories.map((cat, idx) => (
-                           cat.isPopup ? (
-                             <button suppressHydrationWarning 
-                               key={idx} 
-                               onClick={() => { setShowPopup(true); setIsDropdownOpen(false); }} 
-                               className="w-full text-left px-6 py-3 text-sm font-semibold text-gray-700 hover:bg-emerald-50 hover:text-[var(--primary-blue)] transition-colors border-b border-gray-50 last:border-0"
-                             >
-                               {cat.name}
-                             </button>
-                           ) : (
-                             <Link 
-                               key={idx} 
-                               onClick={() => setIsDropdownOpen(false)} 
-                               href={cat.href} 
-                               className="block px-6 py-3 text-sm font-semibold text-gray-700 hover:bg-emerald-50 hover:text-[var(--primary-blue)] transition-colors border-b border-gray-50 last:border-0"
-                             >
-                               {cat.name}
-                             </Link>
-                           )
-                        ))}
+                      {productCategories.map((cat, idx) => (
+                        cat.isPopup ? (
+                          <button suppressHydrationWarning
+                            key={idx}
+                            onClick={() => { setShowPopup(true); setIsDropdownOpen(false); }}
+                            className="w-full text-left px-6 py-3 text-sm font-semibold text-gray-700 hover:bg-emerald-50 hover:text-[var(--primary-blue)] transition-colors border-b border-gray-50 last:border-0"
+                          >
+                            {cat.name}
+                          </button>
+                        ) : (
+                          <Link
+                            key={idx}
+                            onClick={() => setIsDropdownOpen(false)}
+                            href={cat.href}
+                            className="block px-6 py-3 text-sm font-semibold text-gray-700 hover:bg-emerald-50 hover:text-[var(--primary-blue)] transition-colors border-b border-gray-50 last:border-0"
+                          >
+                            {cat.name}
+                          </Link>
+                        )
+                      ))}
                     </div>
                   </li>
                 );
@@ -206,16 +206,16 @@ export default function Navbar() {
                         {productCategories.map((cat, idx) => (
                           <li key={idx}>
                             {cat.isPopup ? (
-                              <button suppressHydrationWarning 
-                                onClick={() => { setShowPopup(true); setIsMenuOpen(false); }} 
+                              <button suppressHydrationWarning
+                                onClick={() => { setShowPopup(true); setIsMenuOpen(false); }}
                                 className="block w-full text-left px-4 py-3 text-sm font-semibold text-gray-600 hover:text-[var(--primary-blue)] hover:bg-emerald-50 rounded-lg transition-colors border-b border-gray-50 last:border-0"
                               >
                                 {cat.name}
                               </button>
                             ) : (
-                              <Link 
-                                href={cat.href} 
-                                onClick={() => setIsMenuOpen(false)} 
+                              <Link
+                                href={cat.href}
+                                onClick={() => setIsMenuOpen(false)}
                                 className="block px-4 py-3 text-sm font-semibold text-gray-600 hover:text-[var(--primary-blue)] hover:bg-emerald-50 rounded-lg transition-colors border-b border-gray-50 last:border-0"
                               >
                                 {cat.name}
@@ -271,8 +271,8 @@ export default function Navbar() {
                 </svg>
               </div>
               <h3 className="text-2xl font-bold text-[var(--primary-blue)] mb-6">Launching Soon !!</h3>
-              <button suppressHydrationWarning 
-                onClick={() => setShowPopup(false)} 
+              <button suppressHydrationWarning
+                onClick={() => setShowPopup(false)}
                 className="w-full py-3 bg-gradient-to-r from-[var(--primary-blue)] to-blue-600 hover:from-blue-600 hover:to-[var(--primary-blue)] text-white font-semibold rounded-xl transition-all duration-300 shadow-md hover:shadow-lg focus:outline-none"
               >
                 Got it, thanks!
